@@ -1,1 +1,10 @@
-<app-resume></app-resume>
+<div class="navbar">
+<button (click)="changeTransport('avto')" >avto</button>
+<button (click)="changeTransport('ship')">ship</button>
+<button (click)="changeTransport('plane')" >plane</button>
+</div>
+<div [ngSwitch]="transport">
+    <div *ngSwitchCase="'avto'"><app-avto-comp></app-avto-comp></div>
+    <div *ngSwitchCase="'ship'"><app-ship-comp></app-ship-comp></div>
+    <div *ngSwitchCase="'plane'"><app-plane-comp></app-plane-comp></div>
+</div>

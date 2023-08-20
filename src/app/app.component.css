@@ -1,0 +1,21 @@
+.navbar {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .navbar button {
+    background-color: slategrey;
+    color: #ffffff;
+    border: none;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 25px;
+    width: 100px;
+    height: auto;
+  }
+  
+  .navbar button:hover {
+    background-color: #45a049;
+  }
+
+

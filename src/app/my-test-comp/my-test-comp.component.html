@@ -1,1 +1,32 @@
-<h1>{{Name}}</h1>
+<h1>{{Name| uppercase}}</h1>
+<h1>{{Car}}₴</h1>
+<h1>{{Car|percent:'1.0-0'}}</h1>
+
+<div *ngIf="isName()">
+<span>You are Alex</span>
+</div>
+
+<div *ngFor="let st of Students">
+    <span>Name: </span>{{st}}
+</div>
+<p>
+<span>ToDoList</span>
+<div *ngIf="isToday(myData); else done">
+    <div *ngFor="let task of ToDoList; let i = index">
+        <span>Task {{i + 1}}: </span>{{task}}
+    </div>
+</div>
+<ng-template #done>
+    <p>No Task</p>
+</ng-template>
+<button (click)="changeColor('blue')" style="background-color:blue;">blue</button>
+<button (click)="changeColor('yellow')" style="background-color:yellow;margin-left: 10px;">yellow</button>
+<button (click)="changeColor('red')" style="background-color:red;margin-left: 10px;">red</button>
+<button (click)="changeColor('black')" style="margin-left: 10px;">Clear</button>
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'red'" style="color:red;">Ви обрали червоний</p>
+    <p *ngSwitchCase="'yellow'" style="color:yellow;">Ви обрали жовтий</p>
+    <p *ngSwitchCase="'blue'" style="color:blue;">Ви обрали синій</p>
+    <p *ngSwitchDefault  style="color:black;">Чорний</p>
+</div>
+
